@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import Customer, Investment, Stock ,Fund
+from .models import Customer, Investment, Stock, Fund
 
 class CustomerList(admin.ModelAdmin):
     list_display = ('cust_number', 'name', 'city', 'cell_phone')
