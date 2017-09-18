@@ -126,8 +126,9 @@ def investment_edit(request, pk):
            # investment.customer = investment.id
            investment.updated_date = timezone.now()
            investment.save()
-           investment = Investment.objects.filter(acquired_date__lte=timezone.now())
-           return render(request, 'portfolio/investment_list.html', {'investments': investments})
+           investments = Investment.objects.filter(acquired_date__lte=timezone.now())
+           return render(request, 'portfolio/investment_list.html',
+                         {'investments': investments})
     else:
        # print("else")
        form = InvestmentForm(instance=investment)
